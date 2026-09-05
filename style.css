@@ -222,7 +222,7 @@ a {
 .nav-dropdown-menu {
     position: absolute;
 
-    top: 100%;
+    top: calc(100% - 10px);
     left: 0;
 
     min-width: 55px;
@@ -232,7 +232,7 @@ a {
     display: flex;
     flex-direction: column;
 
-    gap: 7px;
+    gap: 1px;
 
     opacity: 0;
     visibility: hidden;
