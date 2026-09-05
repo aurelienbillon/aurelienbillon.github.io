@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Les lignes — Aurélien Billon</title>
+
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =========================================
+           PAGE
+        ========================================== */
+
+        .lines-page {
+            width: 100%;
+
+            padding:
+                145px var(--page-x) 140px var(--page-x);
+        }
+
+
+        /* =========================================
+           INTRO
+        ========================================== */
+
+        .lines-intro {
+            width: 100%;
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(220px, 0.65fr) minmax(420px, 1.35fr);
+
+            gap: 8vw;
+
+            align-items: start;
+
+            padding-bottom: 55px;
+            margin-bottom: 65px;
+
+            border-bottom: 1px solid var(--line);
+        }
+
+
+        .lines-intro-title h1 {
+            font-family: var(--font-serif);
+
+            font-size: clamp(24px, 2.2vw, 32px);
+
+            font-weight: 400;
+
+            line-height: 1.1;
+
+            margin: 0 0 8px;
+        }
+
+
+        .lines-intro-title span {
+            display: block;
+
+            font-family: var(--font-sans);
+
+            font-size: 9px;
+
+            opacity: 0.5;
+        }
+
+
+        .lines-intro-text {
+            max-width: 620px;
+        }
+
+
+        .lines-intro-label {
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-family: var(--font-sans);
+
+            font-size: 9px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.06em;
+
+            opacity: 0.45;
+        }
+
+
+        .lines-intro-text p {
+            font-family: var(--font-sans);
+
+            font-size: var(--body);
+
+            font-weight: 300;
+
+            line-height: 1.7;
+
+            margin: 0 0 22px;
+        }
+
+
+        .lines-technique {
+            margin-top: 26px !important;
+            margin-bottom: 0 !important;
+
+            font-size: 10px !important;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.04em;
+
+            opacity: 0.55;
+        }
+
+
+        /* =========================================
+           GALERIE
+        ========================================== */
+
+        .lines-gallery {
+            width: 100%;
+
+            max-width: 780px;
+
+            margin: 0 auto;
+
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+
+            gap: 55px;
+        }
+
+
+        .lines-board {
+            appearance: none;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            width: 100%;
+
+            margin: 0;
+            padding: 0;
+
+            border: 0;
+            background: none;
+
+            cursor: zoom-in;
+
+            overflow: visible;
+        }
+
+
+        /* =========================================
+           IMAGES ENTIERES — AUCUN RECADRAGE
+        ========================================== */
+
+        .lines-board img {
+            display: block;
+
+            width: auto;
+            height: auto;
+
+            max-width: 100%;
+            max-height: none;
+
+            object-fit: contain;
+
+            transition:
+                opacity 0.25s ease,
+                transform 0.3s ease;
+        }
+
+
+        .lines-board:hover img {
+            opacity: 0.82;
+
+            transform: scale(0.995);
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================== */
+
+        @media (max-width: 700px) {
+
+            .lines-page {
+                padding:
+                    175px var(--page-x) 120px;
+            }
+
+
+            .lines-intro {
+                grid-template-columns: 1fr;
+
+                gap: 25px;
+
+                padding-bottom: 40px;
+                margin-bottom: 45px;
+            }
+
+
+            .lines-gallery {
+                width: 100%;
+                max-width: 100%;
+
+                gap: 40px;
+            }
+
+
+            .lines-board {
+                width: 100%;
+            }
+
+
+            .lines-board img {
+                width: 100%;
+                height: auto;
+
+                max-width: 100%;
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="header">
+
+        <a href="index.html" class="name" aria-label="Aurélien Billon — Accueil">
+
+            <img src="images/aurelien-billon.svg" alt="Aurélien Billon">
+
+        </a>
+
+
+        <div class="header-right">
+
+            <nav class="navigation">
+
+                <a href="illustration.html" class="active">
+                    Illustration
+                </a>
+
+
+                <div class="nav-dropdown">
+
+                    <a href="animation.html" class="nav-dropdown-title">
+                        Animation
+                    </a>
+
+                    <div class="nav-dropdown-menu">
+
+                        <a href="animation-2d.html">
+                            2D
+                        </a>
+
+                        <a href="animation-3d.html">
+                            3D
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <a href="apropos.html">
+                    À propos
+                </a>
+
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <!-- =================================
+                 ICONES
+            ================================== -->
+
+            <div class="header-icons">
+
+
+                <!-- VIMEO -->
+
+                <a href="https://vimeo.com/user207681226" class="header-icon" target="_blank" rel="noopener noreferrer"
+                    aria-label="Vimeo">
+
+                    <svg class="vimeo-icon" viewBox="0 0 24 24" aria-hidden="true">
+
+                        <path
+                            d="M23.977 6.416c-.105 2.338-1.739 5.543-4.894 9.608-3.267 4.247-6.025 6.37-8.29 6.37-1.409 0-2.598-1.296-3.57-3.886L5.29 11.386c-.72-2.588-1.49-3.882-2.31-3.882-.18 0-.806.377-1.876 1.127L0 7.178c1.175-1.033 2.334-2.066 3.478-3.1C5.045 2.724 6.223 2.01 7.02 1.93c1.88-.18 3.038 1.106 3.475 3.857.467 2.97.792 4.818.973 5.543.54 2.464 1.133 3.694 1.781 3.694.503 0 1.26-.797 2.27-2.394 1.008-1.597 1.547-2.812 1.62-3.646.144-1.379-.396-2.07-1.62-2.07-.576 0-1.17.132-1.78.394 1.182-3.875 3.44-5.756 6.77-5.65 2.468.073 3.625 1.66 3.468 4.758z">
+                        </path>
+
+                    </svg>
+
+                </a>
+
+
+                <!-- MAIL -->
+
+                <a href="contact.html" class="header-icon" aria-label="Contact">
+
+                    <svg class="mail-icon" viewBox="0 0 24 24" aria-hidden="true">
+
+                        <rect x="2.5" y="4.5" width="19" height="15" rx="0.8">
+                        </rect>
+
+                        <path d="M3 5L12 13L21 5"></path>
+
+                    </svg>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         LES LIGNES
+    ========================================== -->
+
+    <main class="lines-page">
+
+
+        <!-- =====================================
+             INTRO
+        ====================================== -->
+
+        <section class="lines-intro">
+
+
+            <div class="lines-intro-title">
+
+                <h1>
+                    Les lignes
+                </h1>
+
+                <span>
+                    2026 — Projet en cours
+                </span>
+
+            </div>
+
+
+            <div class="lines-intro-text">
+
+
+                <span class="lines-intro-label">
+                    Pitch
+                </span>
+
+                <p>
+                    Nick, scénariste en panne d’inspiration, cherche par tous
+                    les moyens à provoquer le succès. Une expérience étrange
+                    va peu à peu brouiller la frontière entre sa vie réelle
+                    et celle qu’il fantasme.
+                </p>
+
+
+                <span class="lines-intro-label">
+                    Intentions graphiques
+                </span>
+
+                <p>
+                    Projet de bande dessinée en noir et blanc mêlant encre,
+                    trames et aplats. Le dessin cherche une tension entre
+                    mise en scène cinématographique, rythme de lecture
+                    et déformation progressive de l’image.
+                </p>
+
+
+                <p class="lines-technique">
+                    Bande dessinée · Noir et blanc · Encre et trames · 2026
+                </p>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================
+             PLANCHES
+        ====================================== -->
+
+        <section class="lines-gallery">
+
+
+            <!-- PLANCHE 01 -->
+
+            <button class="lines-board animation-zoom" type="button">
+
+                <img src="images/les-lignes/planche_1.png" alt="Les lignes — Planche 1">
+
+            </button>
+
+
+            <!-- PLANCHE 02 -->
+
+            <button class="lines-board animation-zoom" type="button">
+
+                <img src="images/les-lignes/planche_2.png" alt="Les lignes — Planche 2">
+
+            </button>
+
+
+            <!-- PLANCHE 03 -->
+
+            <button class="lines-board animation-zoom" type="button">
+
+                <img src="images/les-lignes/planche_3.png" alt="Les lignes — Planche 3">
+
+            </button>
+
+
+            <!-- PLANCHE 04 -->
+
+            <button class="lines-board animation-zoom" type="button">
+
+                <img src="images/les-lignes/planche_4.png" alt="Les lignes — Planche 4">
+
+            </button>
+
+
+            <!-- PLANCHE 05 -->
+
+            <button class="lines-board animation-zoom" type="button">
+
+                <img src="images/les-lignes/planche_5.png" alt="Les lignes — Planche 5">
+
+            </button>
+
+
+            <!-- PLANCHE 06 -->
+
+            <button class="lines-board animation-zoom" type="button">
+
+                <img src="images/les-lignes/planche_6.png" alt="Les lignes — Planche 6">
+
+            </button>
+
+
+            <!-- PLANCHE 07 -->
+
+            <button class="lines-board animation-zoom" type="button">
+
+                <img src="images/les-lignes/planche_7.png" alt="Les lignes — Planche 7">
+
+            </button>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         LIGHTBOX
+    ========================================== -->
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+
+        <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Fermer">
+            ×
+        </button>
+
+        <img class="lightbox-image" id="lightbox-image" src="" alt="">
+
+    </div>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="site-footer">
+
+        <p>
+            © Aurélien Billon
+        </p>
+
+        <p>
+            Bruxelles — 2026
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

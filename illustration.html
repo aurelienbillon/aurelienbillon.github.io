@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Illustration — Aurélien Billon</title>
+
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* INTRO */
+
+        .illustration-page-intro {
+            width: 100%;
+            max-width: 1150px;
+            margin: 0 auto 38px;
+            text-align: center;
+        }
+
+        .illustration-page-intro p {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            font-size: 13px;
+            font-weight: 300;
+            line-height: 1.6;
+            letter-spacing: 0.01em;
+            color: #555;
+        }
+
+
+        /* IMAGES */
+
+        .illustration-series-media img {
+            filter: brightness(0.76);
+
+            transition:
+                filter 0.3s ease,
+                transform 0.35s ease;
+        }
+
+
+        /* OVERLAY TOUJOURS VISIBLE */
+
+        .illustration-series-overlay {
+            position: absolute;
+            inset: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            opacity: 1 !important;
+            visibility: visible !important;
+
+            background: rgba(0, 0, 0, 0.04);
+
+            pointer-events: none;
+
+            transition: background 0.3s ease;
+        }
+
+        .illustration-series-overlay-text {
+            color: white;
+            text-align: center;
+
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .illustration-series-overlay-text h2 {
+            font-family: "Libre Caslon Text", serif;
+
+            font-size: clamp(23px, 2vw, 31px);
+            font-weight: 400;
+            line-height: 1.2;
+
+            margin: 0 0 8px;
+
+            opacity: 1 !important;
+        }
+
+        .illustration-series-overlay-text p {
+            font-family: "Poppins", sans-serif;
+
+            font-size: 12px;
+            font-weight: 300;
+            line-height: 1.4;
+
+            letter-spacing: 0.05em;
+
+            margin: 0;
+
+            opacity: 0.85;
+        }
+
+
+        /* HOVER */
+
+        .illustration-series-card:hover .illustration-series-media img {
+            filter: brightness(0.64);
+            transform: scale(1.01);
+        }
+
+        .illustration-series-card:hover .illustration-series-overlay {
+            background: rgba(0, 0, 0, 0.08);
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            .illustration-page-intro {
+                margin-bottom: 30px;
+            }
+
+            .illustration-page-intro p {
+                font-size: 11px;
+            }
+
+            .illustration-series-media img {
+                filter: brightness(0.74);
+            }
+
+            .illustration-series-overlay-text p {
+                font-size: 10px;
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <a href="index.html" class="name" aria-label="Aurélien Billon — Accueil">
+
+            <img src="images/aurelien-billon.svg" alt="Aurélien Billon">
+
+        </a>
+
+
+        <div class="header-right">
+
+            <nav class="navigation">
+
+                <a href="illustration.html" class="active">
+                    Illustration
+                </a>
+
+
+                <div class="nav-dropdown">
+
+                    <a href="animation.html" class="nav-dropdown-title">
+                        Animation
+                    </a>
+
+                    <div class="nav-dropdown-menu">
+
+                        <a href="animation-2d.html">
+                            2D
+                        </a>
+
+                        <a href="animation-3d.html">
+                            3D
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <a href="apropos.html">
+                    À propos
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <div class="header-icons">
+
+                <!-- VIMEO -->
+
+                <a href="https://vimeo.com/user207681226" class="header-icon" target="_blank" rel="noopener noreferrer"
+                    aria-label="Vimeo">
+
+                    <svg class="vimeo-icon" viewBox="0 0 24 24" aria-hidden="true">
+
+                        <path
+                            d="M23.977 6.416c-.105 2.338-1.739 5.543-4.894 9.608-3.267 4.247-6.025 6.37-8.29 6.37-1.409 0-2.598-1.296-3.57-3.886L5.29 11.386c-.72-2.588-1.49-3.882-2.31-3.882-.18 0-.806.377-1.876 1.127L0 7.178c1.175-1.033 2.334-2.066 3.478-3.1C5.045 2.724 6.223 2.01 7.02 1.93c1.88-.18 3.038 1.106 3.475 3.857.467 2.97.792 4.818.973 5.543.54 2.464 1.133 3.694 1.781 3.694.503 0 1.26-.797 2.27-2.394 1.008-1.597 1.547-2.812 1.62-3.646.144-1.379-.396-2.07-1.62-2.07-.576 0-1.17.132-1.78.394 1.182-3.875 3.44-5.756 6.77-5.65 2.468.073 3.625 1.66 3.468 4.758z">
+                        </path>
+
+                    </svg>
+
+                </a>
+
+
+                <!-- MAIL -->
+
+                <a href="contact.html" class="header-icon" aria-label="Contact">
+
+                    <svg class="mail-icon" viewBox="0 0 24 24" aria-hidden="true">
+
+                        <rect x="2.5" y="4.5" width="19" height="15" rx="0.8">
+                        </rect>
+
+                        <path d="M3 5L12 13L21 5"></path>
+
+                    </svg>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- PAGE ILLUSTRATION -->
+
+    <main class="illustration-page">
+
+
+        <!-- INTRO -->
+
+        <div class="illustration-page-intro">
+
+            <p>
+                Illustrations — recherches, projets personnels et commandes.
+            </p>
+
+        </div>
+
+
+
+        <!-- PROJETS -->
+
+        <div class="illustration-series-grid">
+
+
+            <!-- PRESENCES -->
+
+            <a href="presences.html" class="illustration-series-card">
+
+                <div class="illustration-series-media">
+
+                    <img src="images/illustrations/illustration-01.jpg" alt="Présences">
+
+                    <div class="illustration-series-overlay">
+
+                        <div class="illustration-series-overlay-text">
+
+                            <h2>Présences</h2>
+
+                            <p>
+                                Encre de Chine sur papier · 2025
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- LE COUTEAU -->
+
+            <a href="le-couteau.html" class="illustration-series-card">
+
+                <div class="illustration-series-media">
+
+                    <img src="images/le-couteau/le-couteau-final.jpg" alt="Le couteau">
+
+                    <div class="illustration-series-overlay">
+
+                        <div class="illustration-series-overlay-text">
+
+                            <h2>Le couteau</h2>
+
+                            <p>
+                                Encre de Chine sur papier · 2026
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- J'T'AI VU DANS L'NOIR -->
+
+            <a href="jtai-vu-dans-lnoir.html" class="illustration-series-card">
+
+                <div class="illustration-series-media">
+
+                    <img src="images/jtai-vu-dans-lnoir/1.png" alt="J'T'AI VU DANS L'NOIR">
+
+                    <div class="illustration-series-overlay">
+
+                        <div class="illustration-series-overlay-text">
+
+                            <h2>
+                                J'T'AI VU DANS L'NOIR
+                            </h2>
+
+                            <p>
+                                Storyboard · Scénographie / performance
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- LES LIGNES -->
+
+            <a href="les-lignes.html" class="illustration-series-card">
+
+                <div class="illustration-series-media">
+
+                    <img src="images/les-lignes/planche_1.png" alt="Les lignes">
+
+                    <div class="illustration-series-overlay">
+
+                        <div class="illustration-series-overlay-text">
+
+                            <h2>
+                                Les lignes
+                            </h2>
+
+                            <p>
+                                Bande dessinée · Projet en cours
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer">
+
+        <p>© Aurélien Billon</p>
+
+        <p>Bruxelles — 2026</p>
+
+    </footer>
+
+
+</body>
+
+</html>

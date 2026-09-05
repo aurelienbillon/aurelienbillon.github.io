@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Présences — Aurélien Billon</title>
+
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- MASONRY SPECIFIQUE A PRESENCES -->
+    <style>
+        .illustration-detail-grid {
+            display: block;
+
+            column-count: 2;
+            column-gap: 45px;
+
+            max-width: 1150px;
+
+            margin: 0 auto;
+        }
+
+        .illustration-detail-grid .illustration-item {
+            display: block;
+
+            width: 100%;
+
+            margin: 0 0 45px 0;
+
+            padding: 0;
+
+            border: 0;
+            background: none;
+
+            break-inside: avoid;
+
+            cursor: zoom-in;
+        }
+
+        .illustration-detail-grid .illustration-item img {
+            display: block;
+
+            width: 100%;
+            height: auto;
+
+            max-height: none;
+
+            object-fit: contain;
+
+            transition:
+                opacity 0.25s ease,
+                transform 0.35s ease;
+        }
+
+        .illustration-detail-grid .illustration-item:hover img {
+            opacity: 0.82;
+
+            transform: scale(0.99);
+        }
+
+        @media (max-width: 700px) {
+
+            .illustration-detail-grid {
+                column-count: 1;
+                column-gap: 0;
+            }
+
+            .illustration-detail-grid .illustration-item {
+                margin-bottom: 35px;
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="header">
+
+        <!-- LOGO -->
+
+        <a href="index.html" class="name" aria-label="Aurélien Billon — Accueil">
+
+            <img src="images/aurelien-billon.svg" alt="Aurélien Billon">
+
+        </a>
+
+
+        <div class="header-right">
+
+
+            <!-- NAVIGATION -->
+
+            <nav class="navigation">
+
+                <a href="illustration.html" class="active">
+                    Illustration
+                </a>
+
+
+                <div class="nav-dropdown">
+
+                    <a href="animation.html" class="nav-dropdown-title">
+                        Animation
+                    </a>
+
+
+                    <div class="nav-dropdown-menu">
+
+                        <a href="animation-2d.html">
+                            2D
+                        </a>
+
+                        <a href="animation-3d.html">
+                            3D
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <a href="apropos.html">
+                    À propos
+                </a>
+
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <!-- ICONES -->
+
+            <div class="header-icons">
+
+
+                <!-- VIMEO -->
+
+                <a href="https://vimeo.com/user207681226" class="header-icon" target="_blank" rel="noopener noreferrer"
+                    aria-label="Vimeo">
+
+                    <svg class="vimeo-icon" viewBox="0 0 24 24" aria-hidden="true">
+
+                        <path
+                            d="M23.977 6.416c-.105 2.338-1.739 5.543-4.894 9.608-3.267 4.247-6.025 6.37-8.29 6.37-1.409 0-2.598-1.296-3.57-3.886L5.29 11.386c-.72-2.588-1.49-3.882-2.31-3.882-.18 0-.806.377-1.876 1.127L0 7.178c1.175-1.033 2.334-2.066 3.478-3.1C5.045 2.724 6.223 2.01 7.02 1.93c1.88-.18 3.038 1.106 3.475 3.857.467 2.97.792 4.818.973 5.543.54 2.464 1.133 3.694 1.781 3.694.503 0 1.26-.797 2.27-2.394 1.008-1.597 1.547-2.812 1.62-3.646.144-1.379-.396-2.07-1.62-2.07-.576 0-1.17.132-1.78.394 1.182-3.875 3.44-5.756 6.77-5.65 2.468.073 3.625 1.66 3.468 4.758z">
+                        </path>
+
+                    </svg>
+
+                </a>
+
+
+                <!-- MAIL -->
+
+                <a href="contact.html" class="header-icon" aria-label="Contact">
+
+                    <svg class="mail-icon" viewBox="0 0 24 24" aria-hidden="true">
+
+                        <rect x="2.5" y="4.5" width="19" height="15" rx="0.8">
+                        </rect>
+
+                        <path d="M3 5L12 13L21 5"></path>
+
+                    </svg>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         PAGE PRESENCES
+    ========================================== -->
+
+    <main class="illustration-detail-page">
+
+
+        <!-- =====================================
+             PRESENTATION
+        ====================================== -->
+
+        <section class="illustration-detail-intro">
+
+
+            <div class="illustration-detail-title">
+
+                <h1>
+                    Présences
+                </h1>
+
+                <span>
+                    2025
+                </span>
+
+            </div>
+
+
+            <div class="illustration-detail-description">
+
+                <p>
+                    Recherches de portraits à l’encre de Chine autour de la matière,
+                    des contrastes et des accidents du trait. La série explore les
+                    variations de texture et les possibilités expressives de l’encre
+                    à travers une approche libre du visage.
+                </p>
+
+                <p class="illustration-detail-technique">
+                    Encre de Chine sur papier · 2025
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================
+             GALERIE
+        ====================================== -->
+
+        <section class="illustration-detail-grid">
+
+
+            <button class="illustration-item" type="button">
+
+                <img src="images/presences/presences-01.jpg" alt="Présences — 01">
+
+            </button>
+
+
+            <button class="illustration-item" type="button">
+
+                <img src="images/presences/presences-02.jpg" alt="Présences — 02">
+
+            </button>
+
+
+            <button class="illustration-item" type="button">
+
+                <img src="images/presences/presences-03.jpg" alt="Présences — 03">
+
+            </button>
+
+
+            <button class="illustration-item" type="button">
+
+                <img src="images/presences/presences-04.jpg" alt="Présences — 04">
+
+            </button>
+
+
+            <button class="illustration-item" type="button">
+
+                <img src="images/presences/presences-05.jpg" alt="Présences — 05">
+
+            </button>
+
+
+            <button class="illustration-item" type="button">
+
+                <img src="images/presences/presences-06.jpg" alt="Présences — 06">
+
+            </button>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         LIGHTBOX
+    ========================================== -->
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+
+        <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Fermer">
+            ×
+        </button>
+
+        <img class="lightbox-image" id="lightbox-image" src="" alt="">
+
+    </div>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="site-footer">
+
+        <p>
+            © Aurélien Billon
+        </p>
+
+        <p>
+            Bruxelles — 2026
+        </p>
+
+    </footer>
+
+
+
+    <!-- =========================================
+         LIGHTBOX SCRIPT
+    ========================================== -->
+
+    <script>
+
+        const illustrationItems =
+            document.querySelectorAll(
+                ".illustration-detail-grid .illustration-item"
+            );
+
+        const lightbox =
+            document.getElementById("lightbox");
+
+        const lightboxImage =
+            document.getElementById("lightbox-image");
+
+        const lightboxClose =
+            document.getElementById("lightbox-close");
+
+
+        illustrationItems.forEach((item) => {
+
+            item.addEventListener("click", () => {
+
+                const image =
+                    item.querySelector("img");
+
+                lightboxImage.src =
+                    image.src;
+
+                lightboxImage.alt =
+                    image.alt;
+
+                lightbox.classList.add("is-open");
+
+                lightbox.setAttribute(
+                    "aria-hidden",
+                    "false"
+                );
+
+                document.body.classList.add(
+                    "lightbox-open"
+                );
+
+            });
+
+        });
+
+
+        function closeLightbox() {
+
+            lightbox.classList.remove(
+                "is-open"
+            );
+
+            lightbox.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+            document.body.classList.remove(
+                "lightbox-open"
+            );
+
+        }
+
+
+        lightboxClose.addEventListener(
+            "click",
+            closeLightbox
+        );
+
+
+        lightbox.addEventListener(
+            "click",
+            (event) => {
+
+                if (event.target === lightbox) {
+
+                    closeLightbox();
+
+                }
+
+            }
+        );
+
+
+        document.addEventListener(
+            "keydown",
+            (event) => {
+
+                if (event.key === "Escape") {
+
+                    closeLightbox();
+
+                }
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

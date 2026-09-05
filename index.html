@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aurélien Billon</title>
+
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+
+    <style>
+        /* =========================================
+           INDEX — ESPACEMENTS PLUS COMPACTS
+        ========================================== */
+
+        .home-page {
+            width: 100%;
+
+            padding:
+                20px var(--page-x) 25px;
+        }
+
+
+        /* =========================================
+           SHOWREEL
+        ========================================== */
+
+        .home-hero {
+            width: 100%;
+
+            min-height: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(260px, 0.75fr) minmax(520px, 1.25fr);
+
+            gap: 7vw;
+
+            align-items: center;
+
+            padding:
+                25px 0 35px;
+        }
+
+
+        /* =========================================
+           ILLUSTRATIONS SELECTIONNEES
+        ========================================== */
+
+        .selected-illustrations {
+            width: 100%;
+
+            padding:
+                30px var(--page-x) 120px;
+
+            border-top:
+                1px solid var(--line);
+        }
+
+
+        .selected-illustrations-header {
+            width: 100%;
+
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+
+            margin-bottom: 28px;
+        }
+
+
+        .selected-illustrations-header p {
+            margin: 0;
+
+            font-family: var(--font-sans);
+
+            font-size: 10px;
+            font-weight: 500;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.08em;
+        }
+
+
+        .selected-illustrations-header a {
+            font-family: var(--font-sans);
+
+            font-size: 9px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.05em;
+
+            opacity: 0.45;
+
+            transition: opacity 0.2s ease;
+        }
+
+
+        .selected-illustrations-header a:hover {
+            opacity: 1;
+        }
+
+
+        /* =========================================
+           GRILLE ILLUSTRATIONS
+        ========================================== */
+
+        .selected-illustrations-grid {
+            width: 100%;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap: 18px;
+        }
+
+
+        .selected-illustration-card {
+            display: block;
+
+            width: 100%;
+        }
+
+
+        .selected-illustration-image {
+            position: relative;
+
+            width: 100%;
+
+            aspect-ratio: 4 / 3;
+
+            overflow: hidden;
+
+            background: #eee;
+        }
+
+
+        .selected-illustration-image img {
+            display: block;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+            object-position: center;
+
+            filter: brightness(0.76);
+
+            transition:
+                filter 0.3s ease,
+                transform 0.35s ease;
+        }
+
+
+        /* =========================================
+           TEXTE SUR LES VIGNETTES
+        ========================================== */
+
+        .selected-illustration-overlay {
+            position: absolute;
+
+            inset: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 20px;
+
+            background: rgba(0, 0, 0, 0.04);
+
+            pointer-events: none;
+
+            transition: background 0.3s ease;
+        }
+
+
+        .selected-illustration-text {
+            color: white;
+
+            text-align: center;
+        }
+
+
+        .selected-illustration-text h3 {
+            margin: 0 0 8px;
+
+            font-family: var(--font-serif);
+
+            font-size: clamp(21px, 1.7vw, 27px);
+            font-weight: 400;
+
+            line-height: 1.2;
+        }
+
+
+        .selected-illustration-text p {
+            margin: 0;
+
+            font-family: var(--font-sans);
+
+            font-size: 11px;
+            font-weight: 300;
+
+            line-height: 1.4;
+
+            letter-spacing: 0.04em;
+
+            opacity: 0.85;
+        }
+
+
+        /* =========================================
+           HOVER
+        ========================================== */
+
+        .selected-illustration-card:hover .selected-illustration-image img {
+
+            filter: brightness(0.64);
+
+            transform: scale(1.01);
+        }
+
+
+        .selected-illustration-card:hover .selected-illustration-overlay {
+
+            background: rgba(0, 0, 0, 0.08);
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================== */
+
+        @media (max-width: 700px) {
+
+            .home-page {
+                padding:
+                    18px var(--page-x) 20px;
+            }
+
+
+            .home-hero {
+                grid-template-columns: 1fr;
+
+                gap: 30px;
+
+                padding:
+                    20px 0 35px;
+            }
+
+
+            .selected-illustrations {
+                padding:
+                    30px var(--page-x) 100px;
+            }
+
+
+            .selected-illustrations-grid {
+                grid-template-columns: 1fr;
+
+                gap: 18px;
+            }
+
+
+            .selected-illustration-text p {
+                font-size: 10px;
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="header">
+
+        <a href="index.html" class="name" aria-label="Aurélien Billon — Accueil">
+
+            <img src="images/aurelien-billon.svg" alt="Aurélien Billon">
+
+        </a>
+
+
+        <div class="header-right">
+
+            <nav class="navigation">
+
+                <a href="illustration.html">
+                    Illustration
+                </a>
+
+
+                <div class="nav-dropdown">
+
+                    <a href="animation.html" class="nav-dropdown-title">
+                        Animation
+                    </a>
+
+                    <div class="nav-dropdown-menu">
+
+                        <a href="animation-2d.html">
+                            2D
+                        </a>
+
+                        <a href="animation-3d.html">
+                            3D
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <a href="apropos.html">
+                    À propos
+                </a>
+
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <!-- ICONES -->
+
+            <div class="header-icons">
+
+
+                <!-- VIMEO -->
+
+                <a href="https://vimeo.com/user207681226" class="header-icon" target="_blank" rel="noopener noreferrer"
+                    aria-label="Vimeo">
+
+                    <svg class="vimeo-icon" viewBox="0 0 24 24" aria-hidden="true">
+
+                        <path
+                            d="M23.977 6.416c-.105 2.338-1.739 5.543-4.894 9.608-3.267 4.247-6.025 6.37-8.29 6.37-1.409 0-2.598-1.296-3.57-3.886L5.29 11.386c-.72-2.588-1.49-3.882-2.31-3.882-.18 0-.806.377-1.876 1.127L0 7.178c1.175-1.033 2.334-2.066 3.478-3.1C5.045 2.724 6.223 2.01 7.02 1.93c1.88-.18 3.038 1.106 3.475 3.857.467 2.97.792 4.818.973 5.543.54 2.464 1.133 3.694 1.781 3.694.503 0 1.26-.797 2.27-2.394 1.008-1.597 1.547-2.812 1.62-3.646.144-1.379-.396-2.07-1.62-2.07-.576 0-1.17.132-1.78.394 1.182-3.875 3.44-5.756 6.77-5.65 2.468.073 3.625 1.66 3.468 4.758z">
+                        </path>
+
+                    </svg>
+
+                </a>
+
+
+                <!-- MAIL -->
+
+                <a href="contact.html" class="header-icon" aria-label="Contact">
+
+                    <svg class="mail-icon" viewBox="0 0 24 24" aria-hidden="true">
+
+                        <rect x="2.5" y="4.5" width="19" height="15" rx="0.8">
+                        </rect>
+
+                        <path d="M3 5L12 13L21 5"></path>
+
+                    </svg>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         SLIDER PLEIN ECRAN
+    ========================================== -->
+
+    <section class="home-slider" id="home-slider">
+
+
+        <div class="home-slides">
+
+
+            <!-- 01 -->
+
+            <div class="home-slide active">
+
+                <img src="images/home/home-01.jpg" alt="Travail sélectionné 01">
+
+            </div>
+
+
+            <!-- 02 -->
+
+            <div class="home-slide">
+
+                <img src="images/home/home-02.jpg" alt="Travail sélectionné 02">
+
+            </div>
+
+
+            <!-- 03 -->
+
+            <div class="home-slide">
+
+                <img src="images/home/home-03.jpg" alt="Travail sélectionné 03">
+
+            </div>
+
+
+            <!-- 04 -->
+
+            <div class="home-slide">
+
+                <img src="images/home/home-04.jpg" alt="Travail sélectionné 04">
+
+            </div>
+
+
+            <!-- 05 -->
+
+            <div class="home-slide">
+
+                <img src="images/home/home-05.jpg" alt="Travail sélectionné 05">
+
+            </div>
+
+
+            <!-- 06 -->
+
+            <div class="home-slide">
+
+                <img src="images/home/home-06.jpg" alt="Travail sélectionné 06">
+
+            </div>
+
+
+            <!-- 07 -->
+
+            <div class="home-slide">
+
+                <img src="images/home/home-07.jpg" alt="Travail sélectionné 07">
+
+            </div>
+
+
+            <!-- 08 -->
+
+            <div class="home-slide">
+
+                <img src="images/home/home-08.jpg" alt="Travail sélectionné 08">
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ZONE GAUCHE -->
+
+        <button class="home-slider-zone home-slider-prev" type="button" aria-label="Image précédente">
+
+            <span>
+                ←
+            </span>
+
+        </button>
+
+
+
+        <!-- ZONE DROITE -->
+
+        <button class="home-slider-zone home-slider-next" type="button" aria-label="Image suivante">
+
+            <span>
+                →
+            </span>
+
+        </button>
+
+
+
+        <!-- COMPTEUR -->
+
+        <div class="home-slider-counter">
+
+            <span id="slider-current">
+                01
+            </span>
+
+            <span>
+                /
+            </span>
+
+            <span id="slider-total">
+                08
+            </span>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================================
+         SHOWREEL
+    ========================================== -->
+
+    <main class="home-page">
+
+
+        <section class="home-hero">
+
+
+            <!-- TEXTE -->
+
+            <div class="home-hero-text">
+
+                <p class="home-section-label">
+                    Animation
+                </p>
+
+
+                <h1>
+                    Showreel 2026
+                </h1>
+
+
+                <div class="home-showreel-meta">
+
+                    <a href="https://vimeo.com/1194857553" target="_blank" rel="noopener noreferrer">
+                        Vimeo ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- VIDEO -->
+
+            <div class="home-video">
+
+                <iframe src="https://player.vimeo.com/video/1194857553?title=0&byline=0&portrait=0"
+                    allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+                    title="Showreel 2026 — Aurélien Billon">
+                </iframe>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         ILLUSTRATIONS SELECTIONNEES
+    ========================================== -->
+
+    <section class="selected-illustrations">
+
+
+        <!-- HEADER -->
+
+        <div class="selected-illustrations-header">
+
+            <p>
+                Illustrations sélectionnées
+            </p>
+
+
+            <a href="illustration.html">
+                Voir toutes les illustrations ↗
+            </a>
+
+        </div>
+
+
+
+        <!-- =====================================
+             GRILLE
+        ====================================== -->
+
+        <div class="selected-illustrations-grid">
+
+
+            <!-- =================================
+                 LE COUTEAU
+            ================================== -->
+
+            <a href="le-couteau.html" class="selected-illustration-card">
+
+                <div class="selected-illustration-image">
+
+                    <img src="images/le-couteau/le-couteau-final.jpg" alt="Le couteau">
+
+
+                    <div class="selected-illustration-overlay">
+
+                        <div class="selected-illustration-text">
+
+                            <h3>
+                                Le couteau
+                            </h3>
+
+                            <p>
+                                Encre de Chine sur papier · 2026
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- =================================
+                 PRESENCES
+            ================================== -->
+
+            <a href="presences.html" class="selected-illustration-card">
+
+                <div class="selected-illustration-image">
+
+                    <img src="images/illustrations/illustration-01.jpg" alt="Présences">
+
+
+                    <div class="selected-illustration-overlay">
+
+                        <div class="selected-illustration-text">
+
+                            <h3>
+                                Présences
+                            </h3>
+
+                            <p>
+                                Encre de Chine sur papier · 2025
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- =================================
+                 LES LIGNES
+            ================================== -->
+
+            <a href="les-lignes.html" class="selected-illustration-card">
+
+                <div class="selected-illustration-image">
+
+                    <img src="images/les-lignes/planche_1.png" alt="Les lignes">
+
+
+                    <div class="selected-illustration-overlay">
+
+                        <div class="selected-illustration-text">
+
+                            <h3>
+                                Les lignes
+                            </h3>
+
+                            <p>
+                                Bande dessinée · Projet en cours · 2026
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="site-footer">
+
+        <p>
+            © Aurélien Billon
+        </p>
+
+        <p>
+            Bruxelles — 2026
+        </p>
+
+    </footer>
+
+
+
+    <!-- =========================================
+         SLIDER — 4 SECONDES
+    ========================================== -->
+
+    <script>
+
+        const slides =
+            document.querySelectorAll(".home-slide");
+
+        const previousButton =
+            document.querySelector(".home-slider-prev");
+
+        const nextButton =
+            document.querySelector(".home-slider-next");
+
+        const currentCounter =
+            document.getElementById("slider-current");
+
+        const totalCounter =
+            document.getElementById("slider-total");
+
+
+        let currentSlide = 0;
+        let sliderInterval;
+
+
+        function showSlide(index) {
+
+            if (slides.length === 0) {
+                return;
+            }
+
+            slides.forEach((slide) => {
+                slide.classList.remove("active");
+            });
+
+
+            currentSlide =
+                (index + slides.length) % slides.length;
+
+
+            slides[currentSlide]
+                .classList.add("active");
+
+
+            currentCounter.textContent =
+                String(currentSlide + 1)
+                    .padStart(2, "0");
+
+        }
+
+
+        function nextSlide() {
+
+            showSlide(currentSlide + 1);
+
+        }
+
+
+        function previousSlide() {
+
+            showSlide(currentSlide - 1);
+
+        }
+
+
+        function startSlider() {
+
+            clearInterval(sliderInterval);
+
+            sliderInterval =
+                setInterval(
+                    nextSlide,
+                    4000
+                );
+
+        }
+
+
+        if (slides.length > 0) {
+
+            totalCounter.textContent =
+                String(slides.length)
+                    .padStart(2, "0");
+
+            showSlide(0);
+
+            startSlider();
+
+        }
+
+
+        if (nextButton) {
+
+            nextButton.addEventListener(
+                "click",
+                () => {
+
+                    nextSlide();
+
+                    startSlider();
+
+                }
+            );
+
+        }
+
+
+        if (previousButton) {
+
+            previousButton.addEventListener(
+                "click",
+                () => {
+
+                    previousSlide();
+
+                    startSlider();
+
+                }
+            );
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
